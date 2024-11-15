@@ -70,14 +70,11 @@ h1 {
 }
 
 .button:hover {
-    background-color: #7b1fa2; /* Темнее при наведении */
     transform: translateY(-5px); /* Умеренная анимация при наведении */
 }
 
 .button:active {
     transform: translateY(2px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    background-color: #6a1b9a; /* Темнее при нажатии */
 }
 
 .modal {
