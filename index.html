@@ -1,209 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iArchive 2 | SkankPhone Tutorial</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="icon" href="apple_white.ico" type="image/x-icon">
-
+    <title>PurpleCoin</title>
     <style>
-body {
-    font-family: 'Poppins', sans-serif;
-    overflow-y: auto;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    background-color: #181918;
-    color : #e4e4e4;
-}
-
-.skankphone-body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-
-.skankphone-content {
-    text-align: left;
-    padding: 20px;
-    border-radius: 15px;
-    margin-top: 20px;
-    backdrop-filter: blur(10px);
-    width: 60%;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1.5s ease forwards;
-}
-
-.skankphone-back-arrow {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 24px;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    background-color: ssrgba(199, 199, 199, 0.8);
-    padding: 10px 15px;
-    border-radius: 50px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.skankphone-back-arrow:hover {
-    background-color: #dadada;
-    color: rgb(27, 27, 27);
-}
-
-.warning {
-    color: #d9534f;
-    font-weight: 600;
-    margin: 15px 0;
-}
-
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.skankphone-content h1 {
-    color: #8b5bb7;
-    text-align: center;
-    font-weight: 600;
-}
-
-.guide-list {
-    margin: 20px 0;
-    color: #e4e4e4;
-    font-size: 1.1rem;
-    font-weight: 300;
-}
-
-.guide-list li {
-    margin-bottom: 10px;
-}
-
-.guide-list strong {
-    font-weight: 600;
-    color: #8b5bb7;
-}
-
-@media screen and (max-width: 480px) {
-    body {
-        width: 100vw;
-        overflow-x: hidden;
-    }
-
-    .skankphone-body {
-        padding: 10px;
-    }
-
-    .skankphone-content {
-        width: 90%;
-        padding: 15px;
-        margin-top: 10px;
-    }
-
-    .guide-list {
-        font-size: 0.95rem;
-    }
-
-    .skankphone-back-arrow {
-        font-size: 18px;
-        padding: 6px 10px;
-        top: unset;
-        left: unset;
-        position: relative;
-        margin-bottom: 10px;
-    }
-
-    .warning {
-        margin-top: 0;
-    }
-
-    h1 {
-        font-size: 1.3rem;
-    }
-
-    .download-link {
-        color: white;
-        text-decoration: none;
-    }
-
-    .dark-cli {
-        background: rgba(0, 0, 0, 1);
-    }
-}
+        body {
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            font-weight: bold;
+            background-color: #181918; /* Светлый фон */
+            font-family: 'Poppins', sans-serif; /* Шрифт */
+        }
+        h1 {
+            color: #8b5bb7; /* Цвет заголовка */
+            font-size: 48px; /* Размер заголовка */
+            margin-bottom: 20px; /* Отступ снизу */
+        }
+        #score {
+            font-size: 40px; /* Размер для очков */
+            color: #8b5bb7; /* Цвет очков */
+		}
+        #click-button {
+            padding: 15px 30px; /* Отступы кнопки */
+            font-size: 24px; 
+            cursor: pointer; 
+            margin-top: 20px; 
+            background-color: #181918; /* Цвет фона кнопки */
+            color: white; /* Цвет текста на кнопке */
+            border: none; /* Убираем рамку */
+            transition: background-color 0.3s; /* Анимация при наведении */
+        }
+        #beaver-image {
+            width: 150px; 
+            height: auto; 
+            display: block; 
+            margin: 0 auto; 
+            border: 5px solid #8b5bb7; /* Рамка вокруг изображения */
+            border-radius: 10px; /* Скругление углов рамки */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень */
+            margin-bottom: 20px; /* Отступ снизу изображения */
+        }
     </style>
 </head>
-<body class="skankphone-body">
+<body>
+    <h1>PURPLECOIN</h1>
+	<p><span id="score">0</span></p>
+    <img id="beaver-image" src="https://img.freepik.com/premium-photo/pixel-style-cartoon-front-view-cryptocurrency-hot-holo-purple-coin_477250-307.jpg" alt="Бобер">
+    <button id="click-button"></button>
+	
+    <script>
+        let score = 0;
 
-    <a href="index.html" class="skankphone-back-arrow">Back</a>
-    
+        // большой пенис
+        function increaseScore() {
+            score++;
+            document.getElementById('score').innerText = score;
+        }
 
-    <div class="skankphone-content">
-       <h1 class="fade-in">iArchive 2</h1>
-        <div class="column-container fade-in">
-            <div class="column">
-                <h2>Firmwares</h2>
-                <a href="InternalFirmwares.html" class="button">Apple Internal Firmwares</a>
-            </div>
+        // эээээ абработчик 
+        document.getElementById('click-button').onclick = increaseScore;
 
-            <div class="column">
-                <h2>Tutorials</h2>
-                <a href="NonUITut.html" class="button">NonUI Tutorial</a>
-                <a href="InternalUITut.html" class="button">InternalUI Tutorial</a>
-                <a href="DemoLoopTut.html" class="button">DemoLoop Tutorial</a>
-                <a href="SkankPhoneTut.html" id="skankphone-tutorial-button" class="button">SkankPhone Tutorial</a>
-            </div>
-
-            <div class="column">
-                <h2>Links</h2>
-                <a href="links.html" class="button">Links</a>
-            </div>
-
-            <div class="column">
-                <h2>Apps</h2>
-                <a href="https://mega.nz/folder/RIwwhYiL#gBtcgj5jfhJFuxO9bv4L2A" class="button">Internal Apps</a>
-            </div>
-        </div>
-    </div>
-
-    <div id="firmwareModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Soon</p>
-        </div>
-    </div>
-
-    <div class="telegram-buttons fade-in">
-        <a href="https://t.me/MarkTaraSovAI_Official" target="_blank" class="telegram-button">
-            <i class="fab fa-telegram-plane"></i>
-            <span>MarkTaraSov | Apple Internal</span>
-        </a>
-        <a href="https://t.me/AppleInternalArchive" target="_blank" class="telegram-button">
-            <i class="fab fa-telegram-plane"></i>
-            <span>Apple Internal Archive</span>
-        </a>
-        <a href="https://t.me/AppleInternalSoft" target="_blank" class="telegram-button">
-            <i class="fab fa-telegram-plane"></i>
-            <span>Apple Internal Software and more</span>
-        </a>
-    </div>
-
-    <script src="script.js"></script>
+        // эээээээээ абработчик изображения
+        document.getElementById('beaver-image').onclick = increaseScore;
+    </script>
 </body>
 </html>
